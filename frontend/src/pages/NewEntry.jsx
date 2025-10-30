@@ -1,79 +1,44 @@
-import React, { useState } from 'react';
-import API from '../api/api';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { SmilePlus } from "lucide-react";
 
 export default function NewEntry() {
-  const [step, setStep] = useState(1);
-  const [form, setForm] = useState({
-    date: new Date().toISOString().substring(0,10),
-    time: new Date().toTimeString().slice(0,5),
-    mood: 'Neutral',
-    moodScore: 5,
-    activities: '',
-    thoughts: '',
-    tags: '',
-    media: null
-  });
-
-  const handleFile = e => setForm({...form, media: e.target.files});
-
-  const submit = async () => {
-    const fd = new FormData();
-    Object.keys(form).forEach(k => {
-      if (k === 'media' && form.media) {
-        Array.from(form.media).forEach(f => fd.append('media', f));
-      } else fd.append(k, form[k]);
-    });
-    try {
-      await API.post('/entries', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
-      alert('Entry saved');
-      window.location = '/';
-    } catch (e) { alert('Error'); }
-  };
+  const [mood, setMood] = useState(5);
+  const [note, setNote] = useState("");
 
   return (
-    <div className="bg-white p-6 rounded shadow">
-      <h2 className="text-xl font-semibold mb-4">New Entry</h2>
-      {step === 1 && (
-        <div>
-          <label>Date</label>
-          <input type="date" value={form.date} onChange={e=>setForm({...form,date:e.target.value})} className="block border p-2"/>
-          <label className="mt-2">Mood</label>
-          <select value={form.mood} onChange={e=>setForm({...form,mood:e.target.value})} className="block border p-2">
-            <option>Happy</option><option>Neutral</option><option>Anxious</option><option>Sad</option><option>Excited</option>
-          </select>
-          <label className="mt-2">Mood Intensity: {form.moodScore}</label>
-          <input type="range" min="0" max="10" value={form.moodScore} onChange={e=>setForm({...form,moodScore:e.target.value})}/>
-          <div className="mt-4">
-            <button onClick={()=>setStep(2)} className="px-4 py-2 bg-blue-600 text-white rounded">Next</button>
-          </div>
-        </div>
-      )}
+    <motion.div
+      className="max-w-3xl mx-auto glass p-8 rounded-3xl border border-cyan-400/30 shadow-[0_0_20px_#00ffff44]"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="flex items-center gap-3 mb-6 text-cyan-300">
+        <SmilePlus size={32} />
+        <h2 className="text-3xl font-semibold">New Mood Entry</h2>
+      </div>
 
-      {step === 2 && (
-        <div>
-          <label>Activities</label>
-          <input value={form.activities} onChange={e=>setForm({...form,activities:e.target.value})} placeholder="comma separated" className="block border p-2"/>
-          <label className="mt-2">Thoughts</label>
-          <textarea value={form.thoughts} onChange={e=>setForm({...form,thoughts:e.target.value})} className="block border p-2"/>
-          <label className="mt-2">Add Media</label>
-          <input type="file" multiple onChange={handleFile} />
-          <div className="mt-4">
-            <button onClick={()=>setStep(1)} className="px-4 py-2 border rounded mr-2">Back</button>
-            <button onClick={()=>setStep(3)} className="px-4 py-2 bg-blue-600 text-white rounded">Next</button>
-          </div>
-        </div>
-      )}
+      <label className="block text-cyan-200 mb-3 text-lg">How are you feeling today?</label>
+      <input
+        type="range"
+        min="1"
+        max="10"
+        value={mood}
+        onChange={(e) => setMood(e.target.value)}
+        className="w-full accent-cyan-400"
+      />
+      <p className="text-center text-xl mt-2 text-cyan-300">Mood: {mood}/10</p>
 
-      {step === 3 && (
-        <div>
-          <label>Tags</label>
-          <input value={form.tags} onChange={e=>setForm({...form,tags:e.target.value})} placeholder="comma separated" className="block border p-2"/>
-          <div className="mt-4">
-            <button onClick={()=>setStep(2)} className="px-4 py-2 border rounded mr-2">Back</button>
-            <button onClick={submit} className="px-4 py-2 bg-green-600 text-white rounded">Save Entry</button>
-          </div>
-        </div>
-      )}
-    </div>
+      <textarea
+        placeholder="Write your thoughts here..."
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        className="w-full mt-6 p-4 rounded-xl bg-[#001b2e]/50 border border-cyan-500/30 focus:outline-none focus:border-cyan-400 text-white resize-none h-40"
+      />
+
+      <button className="mt-6 w-full py-3 rounded-xl bg-cyan-500/30 hover:bg-cyan-400/50 text-white font-semibold tracking-wide shadow-[0_0_15px_#00ffffaa] transition-all">
+        Save Entry
+      </button>
+    </motion.div>
   );
 }

@@ -11,7 +11,7 @@ export default function ReminderPanel(){
   return (
     <div>
       <div className="space-y-2">
-        {reminders.map(r => (
+        {reminders.map((r,index) => (
           <div key={r._id} className="flex items-center justify-between border rounded p-2">
             <div>
               <div className="font-medium">{r.description}</div>
