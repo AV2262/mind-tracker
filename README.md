@@ -16,7 +16,7 @@
 ## 🌟 Overview  
 
 **Mind Tracker** is a futuristic, neon-inspired web app that helps users reflect on their emotional well-being through journaling, mood tracking, and visual insights.  
-It combines *aesthetics + analytics* — giving users a calm, fluid experience with glowing aqua-blue accents, charts, and animations.  
+It merges **aesthetics + analytics**, offering a calm and fluid experience with glowing aqua-blue accents, charts, and animations.
 
 > 💡 Built using **React (Vite)**, **Tailwind CSS**, **Framer Motion**, and **Chart.js**.
 
@@ -28,20 +28,32 @@ It combines *aesthetics + analytics* — giving users a calm, fluid experience w
 |------|-------------|
 | **Frontend** | React 18, Vite |
 | **Styling** | Tailwind CSS, Framer Motion |
-| **Data Visualization** | Chart.js, react-chartjs-2 |
+| **Charts** | Chart.js, react-chartjs-2 |
 | **Icons** | Lucide React |
-| **Backend (planned)** | Node.js, Express.js, MongoDB |
+| **Backend (Planned)** | Node.js, Express.js, MongoDB |
 | **Version Control** | Git & GitHub |
 
 ---
 
 ## 🖥️ Features  
 
-✅ **Interactive Mood Charts** — Line, Bar, and Pie visualizations for mood patterns  
-✅ **Journal Entries** — Write and manage your reflections  
-✅ **Reminders Panel** — Toggle mood-related reminders  
-✅ **Smooth Page Transitions** — Framer Motion animations  
-✅ **Modern Neon UI** — Aqua-blue and purple gradients for a calm, futuristic vibe  
+✅ **Mood Charts & Analytics** — Visualize emotions with animated charts  
+✅ **Journal Entries** — Save daily reflections  
+✅ **Reminders Panel** — Manage habit notifications  
+✅ **Futuristic Neon Theme** — Aqua-blue gradients with glowing highlights  
+✅ **Smooth Animations** — Page transitions powered by Framer Motion  
+✅ **Fully Responsive** — Looks great on all devices  
+
+---
+
+## 📸 Screenshots & Demo Preview  
+
+| Dashboard | Mood Analytics | Journal | Reminders |
+|------------|----------------|----------|------------|
+| ![Dashboard Screenshot](https://via.placeholder.com/600x350/0ea5e9/ffffff?text=Dashboard+Preview) | ![Mood Analytics](https://via.placeholder.com/600x350/22d3ee/ffffff?text=Mood+Analytics) | ![Journal Page](https://via.placeholder.com/600x350/818cf8/ffffff?text=Journal+Page) | ![Reminders Panel](https://via.placeholder.com/600x350/14b8a6/ffffff?text=Reminders+Panel) |
+
+> 🖼️ You can later replace these with real images:  
+> `screenshots/dashboard.png`, `screenshots/stats.png`, `screenshots/journal.png`, etc.
 
 ---
 
@@ -58,11 +70,11 @@ mind-tracker/
 ├── frontend/
 │   ├── src/
 │   │   ├── api/           # Axios API config
-│   │   ├── components/    # UI Components (Charts, Panels, etc.)
-│   │   ├── pages/         # Page-level views (Dashboard, Journal, etc.)
+│   │   ├── components/    # Charts, Panels, etc.
+│   │   ├── pages/         # Dashboard, Journal, Statistics
 │   │   ├── App.jsx
 │   │   └── index.jsx
-│   ├── styles.css         # Global Tailwind + theme styling
+│   ├── styles.css         # Global Tailwind + theme styles
 │   ├── tailwind.config.js
 │   ├── package.json
 │   └── vite.config.js
