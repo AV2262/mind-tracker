@@ -48,12 +48,11 @@ It merges **aesthetics + analytics**, offering a calm and fluid experience with 
 
 ## 📸 Screenshots & Demo Preview  
 
-| Dashboard | Mood Analytics | Journal | Reminders |
+| Dashboard | Mood Statistics | Journal | Reminders |
 |------------|----------------|----------|------------|
-| ![Dashboard Screenshot](./frontend/src/assets/screenshots/dashboard.png) | ![Mood Analytics](./frontend/src/assets/screenshots/mood-analytics.png) | ![Journal Page](./frontend/src/assets/screenshots/journal.png) |
+| ![Dashboard Screenshot](./frontend/src/assets/screenshots/dashboard.png) | ![Mood Statistics](./frontend/src/assets/screenshots/mood-analytics.png) | ![Journal Page](./frontend/src/assets/screenshots/journal.png) |
 
-> 🖼️ You can later replace these with real images:  
-> `screenshots/dashboard.png`, `screenshots/stats.png`, `screenshots/journal.png`, etc.
+
 
 ---
 
