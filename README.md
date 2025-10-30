@@ -50,7 +50,7 @@ It merges **aesthetics + analytics**, offering a calm and fluid experience with 
 
 | Dashboard | Mood Analytics | Journal | Reminders |
 |------------|----------------|----------|------------|
-| ![Dashboard Screenshot](./screenshots/dashboard.png) | ![Mood Analytics](./screenshots/mood-analytics.png) | ![Journal Page](./screenshots/journal.png) | ![Reminders Panel](https://via.placeholder.com/600x350/14b8a6/ffffff?text=Reminders+Panel) |
+| ![Dashboard Screenshot](./frontend/src/assets/screenshots/dashboard.png) | ![Mood Analytics](./frontend/src/assets/screenshots/mood-analytics.png) | ![Journal Page](./frontend/src/assets/screenshots/journal.png) |
 
 > 🖼️ You can later replace these with real images:  
 > `screenshots/dashboard.png`, `screenshots/stats.png`, `screenshots/journal.png`, etc.
