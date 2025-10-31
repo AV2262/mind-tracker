@@ -12,6 +12,8 @@ import Statistics from "./pages/Statistics";
 import Profile from "./pages/Profile";
 import SettingsPage from "./pages/Settings";
 import About from "./pages/About";
+import ChatbotButton from "./components/ChatbotButton";
+
 
 export default function App() {
   const navItems = [
@@ -93,6 +95,9 @@ export default function App() {
           <span className="text-cyan-400 font-semibold">Anjali Verma</span> | © 2025 Mind Tracker
         </p>
       </footer>
+      {/* 🤖 Floating Chatbot Button */}
+      <ChatbotButton />
+
     </div>
   );
 }
